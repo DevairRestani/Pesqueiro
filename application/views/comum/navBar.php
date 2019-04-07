@@ -7,8 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css');?>">
-    <script src="<?= base_url('assets/jquery/jquery.js');?>"></script>
-    <script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js')?>"></script>
 </head>
 
 <style>

@@ -6,10 +6,10 @@
         }
 
         public function index(){
-            $dados;
+            // $dados;
 
-            $dados['login'] = 'admin@admin.com.br';
-            $dados['senha'] = sha1('123456');
+            // $dados['login'] = 'admin@admin.com.br';
+            // $dados['senha'] = sha1('123456');
 
             $this->db->insert('administrador', $dados);
         }
