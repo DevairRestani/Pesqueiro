@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Entrar</title>
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css');?>">
-    <script src="<?= base_url('assets/jquery/jquery.js');?>"></script>
-    <script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js');?>"></script>
 </head>
 
 <style>
@@ -23,36 +21,28 @@
     overflow: auto;
 }
 
-.link {
-    padding-top: 6px;
-}
 </style>
-
 <body>
-    <form class="form-horizontal container aligCenter">
-        <hr>
+    <form class="container aligCenter">
         <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">Usuario</label>
-            <div class="col-sm-10">
-                <input autocomplete="off" type="email" class="form-control" id="inputEmail3" placeholder="Usuario">
-            </div>
+            <label for="User">Usuário</label>
+            <input type="text" class="form-control" id="User" aria-describedby="emailHelp"
+                placeholder="Usuário">
+            <small id="emailHelp" class="form-text text-muted">Nunca compartilhe com <b>ninguém.</b></small>
         </div>
         <div class="form-group">
-            <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
-            <div class="col-sm-10">
-                <input autocomplete="off" type="password" class="form-control" id="inputPassword3" placeholder="Senha">
-            </div>
+            <label for="Senha">Senha</label>
+            <input type="password" class="form-control" id="Senha" placeholder="Senha">
         </div>
-        <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-7">
-                <button type="submit" class="btn btn-default">Entrar</button>
-            </div>
-            <div class="col-sm-3 link">
-                <a href="<?= base_url('home');?>">Esqueci os dados</a>
-            </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="Manter">
+            <label class="form-check-label" for="Manter">Manter-me logado</label>
         </div>
-        <hr>
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
 </body>
+
+<script src="<?= base_url('assets/jquery/jquery.js');?>"></script>
+<script src="<?= base_url('assets/bootstrap/js/bootstrap.min.js');?>"></script>
 
 </html>

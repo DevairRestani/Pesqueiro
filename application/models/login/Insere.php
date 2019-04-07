@@ -11,6 +11,6 @@
             // $dados['login'] = 'admin@admin.com.br';
             // $dados['senha'] = sha1('123456');
 
-            $this->db->insert('administrador', $dados);
+            // $this->db->insert('administrador', $dados);
         }
     }
