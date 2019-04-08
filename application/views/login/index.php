@@ -39,6 +39,7 @@
             <label class="form-check-label" for="Manter">Manter-me logado</label>
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
+        <a href="<?= base_url('home'); ?>">entrar</a>
     </form>
 </body>
 
