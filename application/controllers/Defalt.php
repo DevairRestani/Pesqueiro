@@ -7,9 +7,7 @@ class Defalt extends CI_Controller{
     }
     
    public function index(){
-      //  $this->load->model('login/Insere');
-      //  $this->Insere->index();
-       $this->load->view('login/index');
+      $this->load->view('login/index');
    }
 
   

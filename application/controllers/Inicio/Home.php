@@ -10,5 +10,6 @@ class Home extends CI_Controller{
       $this->load->view('comum/navBar');
       $this->load->view('home/index');
       $this->load->view('comum/footer');
+      $this->db->where('login', $dados['usuario']);
     }
 }
