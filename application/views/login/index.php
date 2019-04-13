@@ -20,9 +20,10 @@
     resize: both;
     overflow: auto;
 }
-
 </style>
+
 <body>
+<<<<<<< HEAD
     <form action="login" class="container aligCenter" method="post">
         <div class="form-group">
             <label for="User">Usuário</label>
@@ -33,6 +34,24 @@
         <div class="form-group">
             <label for="Senha">Senha</label>
             <input type="password" class="form-control" id="Senha" placeholder="Senha" name="senha">
+=======
+    <?php if(isset($erro)){
+        echo('<div class="alert alert-danger" role="alert">
+                Dados Invalidos!!!
+            </div>');
+    } ?>
+
+    <form class="container aligCenter" action="home" method="post">
+        <div class="form-group">
+            <label for="User">Usuário</label>
+            <input type="text" name="usuario" class="form-control" id="User" aria-describedby="userHelp"
+                placeholder="Usuário">
+            <small id="userHelp" class="form-text text-muted">Nunca compartilhe com <b>ninguém.</b></small>
+        </div>
+        <div class="form-group">
+            <label for="Senha">Senha</label>
+            <input type="password" name="senha" class="form-control" id="Senha" placeholder="Senha">
+>>>>>>> ffcdc55c6393541d506f035e513ddfa44e5e799b
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="Manter">
