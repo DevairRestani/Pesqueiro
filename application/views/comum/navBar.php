@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css');?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css');?>">
 </head>
 
 <style>

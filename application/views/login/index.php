@@ -23,16 +23,16 @@
 
 </style>
 <body>
-    <form class="container aligCenter">
+    <form action="login" class="container aligCenter" method="post">
         <div class="form-group">
             <label for="User">Usuário</label>
             <input type="text" class="form-control" id="User" aria-describedby="emailHelp"
-                placeholder="Usuário">
+                placeholder="Usuário" name="usuario">
             <small id="emailHelp" class="form-text text-muted">Nunca compartilhe com <b>ninguém.</b></small>
         </div>
         <div class="form-group">
             <label for="Senha">Senha</label>
-            <input type="password" class="form-control" id="Senha" placeholder="Senha">
+            <input type="password" class="form-control" id="Senha" placeholder="Senha" name="senha">
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="Manter">

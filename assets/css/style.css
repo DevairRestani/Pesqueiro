@@ -67,3 +67,15 @@ th{
 td {
 	text-align: center;
 }
+
+.container-botoes {
+	text-align: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.botao-criar-comanda {
+	position: relative;
+	margin-right: 5px;
+	width: 125px;
+}
