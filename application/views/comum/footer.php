@@ -1,15 +1,11 @@
-<!-- Footer -->
-<footer class="page-footer">
-  
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">
-    © 2019 Copyright: Menescraft
-    </div>
-  
-  <!-- Copyright -->
+<html>
+<body>  
+  <footer class="page-footer">
+      <div class="footer-copyright text-center py-3">
+        © 2019 Copyright: Menescraft
+      </div>
+  </footer>
 
-</footer>
-<!-- Footer -->
 </body>
 
 <script src="<?= base_url('assets/jquery/jquery.js');?>"></script>

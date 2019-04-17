@@ -18,6 +18,14 @@
     background-color: #007bff;
     color: white;
 }
+
+.lupa{
+    width:2.5%;
+    background-color: #007bff;
+    border:5px;
+}
+
+
 </style>
 
 <body>
@@ -55,8 +63,9 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->    
             </form>
+            <img class="lupa" src="assets/img/search.png" type="submit">
         </div>
     </nav>
 
