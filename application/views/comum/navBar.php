@@ -14,9 +14,10 @@
 .page-footer {
     position: absolute;
     bottom: 0;
-    width:100%;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
 }
-
 </style>
 
 <body>
