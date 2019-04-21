@@ -152,7 +152,7 @@ ALTER TABLE `estoque`
 --
 -- AUTO_INCREMENT for table `produtos`
 --
-ALTER TABLE `produtos`
+ALTER TABLE `produtos`pesqueiro
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

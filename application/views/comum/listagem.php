@@ -1,6 +1,6 @@
-<div class="container">
+<div>
 	<div class="container-botoes">
-		<button class="btn btn-outline-success btn-sm botao-criar-comanda">Criar</button>
+		<a href="<?= isset($linkAdicionar) ? $linkAdicionar != NULL ?  base_url($linkAdicionar) : '#' : '#'; ?>" class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a>
 	</div>
 </div>
 <div class="row principal">
