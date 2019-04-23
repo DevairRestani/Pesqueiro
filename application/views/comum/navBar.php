@@ -8,15 +8,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css');?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css');?>">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <style>
 .page-footer {
     position: absolute;
     bottom: 0;
-    width:100%;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
 }
 
+.lupa {
+    width: 2.5%;
+    background-color: #007bff;
+    border: 5px;
+}
 </style>
 
 <body>
@@ -34,7 +42,7 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="estoque">Estoque</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -54,9 +62,10 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
             </form>
+            <img class="lupa" src="assets/img/search.png" type="submit">
         </div>
     </nav>
 
-    </nav>
+    <div class="container">

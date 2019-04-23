@@ -8,7 +8,7 @@ class Home extends CI_Controller{
 
     public function index(){
       $this->load->view('comum/navBar');
-      $this->load->view('home/index');
+      $this->load->view('comum/listagem');
       $this->load->view('comum/footer');
     }
 }
