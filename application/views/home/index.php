@@ -9,7 +9,7 @@
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				Cras justo odio
 				<span class="badge badge-primary badge-pill">14</span>
-                <svg-icon><img src="../../icons/glyph-iconset-master/svg/si-glyph-book-3.svg" /></svg-icon>
+                <svg-icon><img src=<?= base_url('assets/icons/glyph-iconset-master/svg/si-glyph-book-3.svg');?>/></svg-icon>
 			</li>
 			<li class="list-group-item d-flex justify-content-between align-items-center">
 				Dapibus ac facilisis in
