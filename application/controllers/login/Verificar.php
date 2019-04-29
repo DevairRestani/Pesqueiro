@@ -10,20 +10,23 @@ class Verificar extends CI_Controller{
     }
 
     public function index(){
-        $dados['usuario'] = $this->input->post('usuario');
+        $dados['login'] = $this->input->post('usuario');
         $dados['senha'] = sha1($this->input->post('senha'));
 
         $this->load->model('login/Buscar');
 
         $rs = $this->Buscar->index($dados);
-
+        
         if($rs->num_rows() == 1){
+            $responseRow = $rs->row_array();
+
             session_start();
-            $_SESSION['login'] = $dados['usuario'];
-            $_SESSION['senha'] = $dados['senha'];
+            $_SESSION['login'] = $dados['login'];
+            $_SESSION['email'] = $responseRow['email'];
+            $_SESSION['id'] = intval($responseRow['id']);
 
             $this->load->view('comum/navBar');
-            $this->load->view('home/index');
+            $this->load->view('comum/listagem');
             $this->load->view('comum/footer');
         }else{
             $erro['erro'] = 1;

@@ -9,9 +9,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         }
 
         public function index($dados){
-            $sql = 'SELECT login, senha
-                    FROM administrador 
-                    WHERE login = "' . $dados['usuario'] . 
+            $sql = 'SELECT id, email, login 
+                    FROM administrador  
+                    WHERE login = "' . $dados['login'] . 
                     '" AND senha = "' . $dados['senha'] . '";';
 
             return $this->db->query($sql);

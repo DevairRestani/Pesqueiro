@@ -29,7 +29,7 @@
             </div>');
     } ?>
 
-    <form class="container aligCenter" action="home" method="post">
+    <form class="container aligCenter" action="login" method="post">
         <div class="form-group">
             <label for="User">Usuário</label>
             <input type="text" name="usuario" class="form-control" id="User" aria-describedby="userHelp"
