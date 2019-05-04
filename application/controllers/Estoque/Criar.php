@@ -19,11 +19,12 @@ class Criar extends CI_Controller{
         $produto['nome'] = $this->input->post('NomeProduto');
         $produto['valor'] = $this->input->post('valor');
 
-        $this->load->model('Estoque/CriarEstoque');
-        $id = $this->CriarEstoque->InserirProduto($produto);
+        $this->load->model('Produto/Produtos');
+        $id = $this->Produtos->inserir($produto);
 
         $estoque['quantidade'] = $this->input->post('quantidade');
         $estoque['produtoID'] = intval($id);
+        $this->load->model('Estoque/CriarEstoque');
         $this->CriarEstoque->InserirEstoque($estoque);
 
         $this->load->view('comum/navBar');

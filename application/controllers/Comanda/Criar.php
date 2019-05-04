@@ -17,6 +17,7 @@ class Criar extends CI_Controller{
 
         $comanda['nome'] = $this->input->post('NomeProprietario');
         $comanda['administradorID'] = $_SESSION['id'];
+        $comanda['estado'] = 1;
 
         $this->load->model('Comanda/CriarComanda');
         $this->CriarComanda->salvarComanda($comanda);
