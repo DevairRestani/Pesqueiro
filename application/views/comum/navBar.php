@@ -8,7 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css');?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css');?>">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <style>
@@ -24,6 +25,10 @@
     width: 2.5%;
     background-color: #007bff;
     border: 5px;
+}
+
+label{
+    margin-bottom: 1px;
 }
 </style>
 
@@ -42,7 +47,7 @@
                     <a class="nav-link" href="<?= base_url('home'); ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="estoque">Estoque</a>
+                    <a class="nav-link" href="<?= base_url('estoque');?>">Estoque</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"

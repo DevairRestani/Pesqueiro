@@ -18,4 +18,5 @@ class CriarEstoque extends CI_Model{
     public function InserirEstoque($dados){
         $this->db->insert('estoque', $dados);
     }
+
 }

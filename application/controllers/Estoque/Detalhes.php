@@ -9,6 +9,9 @@ class Detalhes extends CI_Controller{
     public function index(){
         $dados['linkAdicionar'] = 'produto/adicionar';
 
+        $this->load->model('Produto/Produtos');
+        $dados['produto'] = $this->Produtos->listar();
+
         $this->load->view('comum/navBar');
         $this->load->view('comum/listagem', $dados);
         $this->load->view('comum/footer');
