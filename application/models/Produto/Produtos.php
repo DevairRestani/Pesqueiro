@@ -18,4 +18,10 @@ class Produtos extends CI_Model{
         return $querry->result_array();
     }
 
+    public function inserir($dados){
+        $this->db->insert('produtos', $dados);
+
+        return $this->db->insert_id();
+    }
+
 }

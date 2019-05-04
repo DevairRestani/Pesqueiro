@@ -9,14 +9,7 @@ class CriarEstoque extends CI_Model{
       $this->load->database();  // construct the Model class
     }
 
-    public function InserirProduto($dados){
-        $this->db->insert('produtos', $dados);
-
-        return $this->db->insert_id();
-    }
-
     public function InserirEstoque($dados){
         $this->db->insert('estoque', $dados);
     }
-
 }

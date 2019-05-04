@@ -25,8 +25,11 @@ class Verificar extends CI_Controller{
             $_SESSION['email'] = $responseRow['email'];
             $_SESSION['id'] = intval($responseRow['id']);
 
+            $this->load->model('listagem/Listar');
+            $dados['dados'] = $this->Listar->listarComandas();
+
             $this->load->view('comum/navBar');
-            $this->load->view('comum/listagem');
+            $this->load->view('comum/listagem', $dados);
             $this->load->view('comum/footer');
         }else{
             $erro['erro'] = 1;

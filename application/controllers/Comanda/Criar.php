@@ -22,6 +22,7 @@ class Criar extends CI_Controller{
         $comanda['administradorID'] = $_SESSION['id'];
         $compra['produtoID'] = $this->input->post('produto');
         $compra['quantidade'] = $this->input->post('quantidade');
+        $comanda['estado'] = 1;
 
         $this->load->model('Comanda/CriarComanda');
         $this->CriarComanda->salvarComanda($comanda);
