@@ -7,8 +7,11 @@ class Criar extends CI_Controller{
     }
 
     public function index(){
+        $this->load->model('Produto/Produtos');
+        $dados['produto'] = $this->Produtos->listar();
+
         $this->load->view('comum/navbar');
-        $this->load->view('comanda/adicionar');
+        $this->load->view('comanda/adicionar', $dados);
         $this->load->view('comum/footer');
     }
 
@@ -17,6 +20,8 @@ class Criar extends CI_Controller{
 
         $comanda['nome'] = $this->input->post('NomeProprietario');
         $comanda['administradorID'] = $_SESSION['id'];
+        $compra['produtoID'] = $this->input->post('produto');
+        $compra['quantidade'] = $this->input->post('quantidade');
 
         $this->load->model('Comanda/CriarComanda');
         $this->CriarComanda->salvarComanda($comanda);

@@ -9,11 +9,21 @@
         <div class="form-row" id="origem">
             <div class="form-group col-md-6">
                 <label for="nome">Nome do Produto</label>
-                <input type="text" name="nomeProduto" id="nome" class="form-control">
+                <select name="produto" class="custom-select">
+                    <option selected>Selecionar</option>
+                    <?php if(isset($produto)){
+                        $i = 0;
+                        while(isset($produto[$i])){ ?>
+                        <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
+                        <?php  
+                            $i++;
+                        }
+                    } ?>
+                </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" name="valorProduto" class="form-control" id="quantidade">
+                <input type="number" name="quantidade" class="form-control" id="quantidade">
             </div>
         </div>
     </div>
