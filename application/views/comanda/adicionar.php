@@ -26,14 +26,14 @@
                 <input type="number" class="form-control" id="quantidade" name="qtd_0" autocomplete="off">
             </div>
             <div class="form-group">
-            <label for=""></label>
+                <label for=""></label>
                 <button type="button" id="btnAdicionar" class="btn btn-primary form-control" onclick="adicionarCampo()">Adicionar Produto</button>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <input type="hidden" name="tiposDeProdutos" value="" id="tiposDeProdutos">
+        <input type="hidden" name="tiposDeProdutos" value="0" id="tiposDeProdutos">
         <ul class="list-group" id="listaProdutos">
 
         </ul>
