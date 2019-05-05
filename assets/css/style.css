@@ -79,3 +79,12 @@ td {
 	margin-right: 5px;
 	width: 125px;
 }
+
+tr{
+	text-align: center;
+}
+
+tr > th{
+	background-color: #ffffff;
+	color: #000000;
+}

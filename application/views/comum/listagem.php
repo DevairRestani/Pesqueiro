@@ -1,49 +1,63 @@
 <div>
     <div class="container-botoes">
-        <a href="<?= isset($linkAdicionar) ? $linkAdicionar != NULL ?  base_url($linkAdicionar) : 'produto/adicionar' : 'comanda/criar'; ?>" class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a>
+        <a href="<?= isset($linkAdicionar) ? $linkAdicionar != NULL ?  base_url($linkAdicionar) : 'produto/adicionar' : 'comanda/criar'; ?>"
+            class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a>
     </div>
 </div>
 <div class="row principal">
     <div class="container">
-        <ul class="list-group">
-            <?php if(isset($dados)){ 
-			$i = 0;
-			while(isset($dados[$i])){ ?>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <?php 
-					echo $dados[$i]['nome']; 
-				?>
-                <div class="icones-interativos">
-                    <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-pencil-alt" title="Editar"></span></a>
-                    <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-info-circle" title="Info"></span></a>
-                </div>
-            </li>
-            <?php
-				$i += 1;
-				} 
-			?>
-            <?php 
-			} 
-		?>
-        <?php if(isset($produto)){ 
-			$i = 0;
-			while(isset($produto[$i])){ ?>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <?php 
-					echo $produto[$i]['nome']; 
-				?>
-                <div class="icones-interativos">
-                    <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-pencil-alt" title="Editar"></span></a>
-                    <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-info-circle" title="Info"></span></a>
-                </div>
-            </li>
-            <?php
-				$i += 1;
-				} 
-			?>
-            <?php 
-			} 
-		?>
-        </ul>
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">
+                        <?php if(isset($dados)){echo 'Data de Abertura';}elseif(isset($produto)){echo 'Valor';} ?>
+                    </th>
+                    <?php if(isset($produto)){echo '<th scope="col">Quantidade</th>';} ?>
+                    <th scope="col">Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if(isset($dados)){
+                    $i = 0;
+                    while(isset($dados[$i])){
+                ?>
+                <tr>
+                    <th scope="row"><?php echo $i+1; ?></th>
+                    <td><?php echo $dados[$i]['nome']; ?></td>
+                    <td><?php echo $dados[$i]['horaabertura']; ?></td>
+                    <td> <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-pencil-alt"
+                                title="Editar"></span></a>
+                        <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-info-circle"
+                                title="Info"></span></a>
+                    </td>
+                </tr>
+                <?php
+                        $i++;
+                    }
+                }elseif(isset($produto)){
+                    $i = 0;
+                    while(isset($produto[$i])){
+                ?>
+                <tr>
+                    <th scope="row"><?php echo $i+1 ?></th>
+                    <td><?php echo $produto[$i]['nome'] ?></td>
+                    <td><span><b>R$ </b></span><?= $produto[$i]['valor'] ?></td>
+                    <td><?= $produto[$i]['quantidade'] ?></td>
+                    <td>
+                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-pencil-alt"
+                                title="Editar"></span></a>
+                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-info-circle"
+                                title="Info"></span></a>
+                    </td>
+                </tr>
+                <?php
+                        $i++;
+                    }
+                } ?>
+            </tbody>
+        </table>
     </div>
 </div>

@@ -9,7 +9,7 @@
         <div class="form-row" id="origem">
             <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome do Produto</label>
-                <select class="custom-select" id="nomeProduto">
+                <select class="custom-select" name="produto_0" id="nomeProduto">
                     <option selected>Selecionar</option>
                     <?php if(isset($produto)){
                         $i = 0;
@@ -23,16 +23,17 @@
             </div>
             <div class="form-group col-md-2">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" class="form-control" id="quantidade" autocomplete="off" value="0">
+                <input type="number" class="form-control" id="quantidade" name="qtd_0" autocomplete="off">
             </div>
-            <div>
-                <button type="button" class="btn btn-primary" onclick="adicionarProduto()">Adicionar Produto</button>
+            <div class="form-group">
+            <label for=""></label>
+                <button type="button" id="btnAdicionar" class="btn btn-primary form-control" onclick="adicionarCampo()">Adicionar Produto</button>
             </div>
         </div>
     </div>
 
     <div class="container">
-        <input type="hidden" name="tiposDeProdutos" value="0" id="tiposDeProdutos">
+        <input type="hidden" name="tiposDeProdutos" value="" id="tiposDeProdutos">
         <ul class="list-group" id="listaProdutos">
 
         </ul>

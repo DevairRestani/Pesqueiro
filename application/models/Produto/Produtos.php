@@ -12,6 +12,7 @@ class Produtos extends CI_Model{
     public function listar(){
         $this->db->select("*");
         $this->db->from("produtos");
+        $this->db->join("estoque", "estoque.produtoID = produtos.id");
 
         $query = $this->db->get();
 
