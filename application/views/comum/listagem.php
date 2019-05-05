@@ -1,8 +1,6 @@
 <div>
     <div class="container-botoes">
-        <!-- <a href="<?= isset($linkAdicionar) ? $linkAdicionar != NULL ?  base_url($linkAdicionar) : '#' : '#'; ?>" class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a> -->
-        <a href="<?= base_url('comanda/criar');?>"
-            class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a>
+        <a href="<?= isset($linkAdicionar) ? $linkAdicionar != NULL ?  base_url($linkAdicionar) : 'produto/adicionar' : 'comanda/criar'; ?>" class="btn btn-outline-success btn-sm botao-criar-comanda">Adicionar</a>
     </div>
 </div>
 <div class="row principal">

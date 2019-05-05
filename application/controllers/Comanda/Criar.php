@@ -20,12 +20,20 @@ class Criar extends CI_Controller{
 
         $comanda['nome'] = $this->input->post('NomeProprietario');
         $comanda['administradorID'] = $_SESSION['id'];
-        $compra['produtoID'] = $this->input->post('produto');
-        $compra['quantidade'] = $this->input->post('quantidade');
         $comanda['estado'] = 1;
 
         $this->load->model('Comanda/CriarComanda');
-        $this->CriarComanda->salvarComanda($comanda);
+        $compra['comandaID'] = $this->CriarComanda->salvarComanda($comanda);
+
+        $numeroElementos = intval($this->input->post('tiposDeProdutos'));
+        $this->load->model('Compra/Adicionar');
+
+        for($i = 0; $i < $numeroElementos; $i += 1){
+            $compra['produtoID'] = intval($this->input->post('nome'.$i));
+            $compra['quantidade'] = intval($this->input->post('quantidade'.$i));
+
+            $this->Adicionar->adicionarCompra($compra);
+        }
 
         $this->load->view('comum/navbar');
         $this->load->view('comanda/adicionar');

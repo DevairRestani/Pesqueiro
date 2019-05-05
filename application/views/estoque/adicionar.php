@@ -15,13 +15,13 @@
         </div>
         <div class="form-group col-md-2">
             <label for="quantidade">Quantidade</label>
-            <input type="number" name="quantidade" class="form-control" id="quantidade">
+            <input type="number" name="quantidade" class="form-control" id="quantidade" autocomplete="off">
         </div>
     </div>
 
     <div class="form-group">
         <label for="valor">Valor</label>
-        <input type="text" name="valor" class="form-control" id="valor" placeholder="EX: 2,30">
+        <input type="text" name="valor" class="form-control" id="valor" placeholder="EX: 2,30" autocomplete="off">
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>

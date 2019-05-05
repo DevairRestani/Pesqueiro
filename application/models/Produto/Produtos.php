@@ -13,9 +13,9 @@ class Produtos extends CI_Model{
         $this->db->select("*");
         $this->db->from("produtos");
 
-        $querry = $this->db->get();
+        $query = $this->db->get();
 
-        return $querry->result_array();
+        return $query->result_array();
     }
 
     public function inserir($dados){

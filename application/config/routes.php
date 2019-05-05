@@ -11,3 +11,4 @@ $route['comanda/salvar'] = 'Comanda/Criar/Salvar';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = "login/Verificar";
+$route['ajax'] = 'Produto/Ajax/receberObjetos';

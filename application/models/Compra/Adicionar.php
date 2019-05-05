@@ -6,7 +6,7 @@ class Adicionar extends CI_Model{
         $this->load->database();
     }
 
-    public function adicionarCompra(dados){
+    public function adicionarCompra($dados){
         $this->db->insert('comprasabertas', $dados);
     }
 }
