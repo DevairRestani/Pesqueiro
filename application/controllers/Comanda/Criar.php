@@ -9,6 +9,7 @@ class Criar extends CI_Controller{
     public function index(){
         $this->load->model('Produto/Produtos');
         $dados['produto'] = $this->Produtos->listar();
+        // print_r($dados); die;
 
         $this->load->view('comum/navbar');
         $this->load->view('comanda/adicionar', $dados);
@@ -29,8 +30,8 @@ class Criar extends CI_Controller{
         $this->load->model('Compra/Adicionar');
 
         for($i = 0; $i < $numeroElementos; $i += 1){
-            $compra['produtoID'] = intval($this->input->post('nome'.$i));
-            $compra['quantidade'] = intval($this->input->post('quantidade'.$i));
+            $compra['produtoID'] = intval($this->input->post('produto_'.$i));
+            $compra['quantidade'] = intval($this->input->post('qtd_'.$i));
 
             $this->Adicionar->adicionarCompra($compra);
         }

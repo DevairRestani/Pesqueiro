@@ -14,18 +14,14 @@
                 <label for="nomeProduto">Nome do Produto</label>
                 <select class="custom-select" name="produto_0" id="nomeProduto">
                     <option selected>Selecionar</option>
-                    <?php 
-                                    if(isset($produto)){
-                                        $i = 0;
-                                        while(isset($produto[$i])){ 
-                                ?>
-                    <option <?php if($produto[$i]['id'] == $dados['comprados'][$j]['produtoID']){echo 'selected';} ?>
-                        value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome']; ?></option>
-                    <?php  
-                                        $i++;
-                                        }
-                                    }    
-                                ?>
+                    <?php if(isset($produto)){
+                        $i = 0;
+                        while(isset($produto[$i])){ ?>
+                        <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
+                        <?php  
+                            $i++;
+                        }
+                    } ?>
                 </select>
             </div>
             <div class="form-group col-md-2">
@@ -90,13 +86,13 @@
 
 
     <div class="container">
-        <input type="hidden" name="tiposDeProdutos" value="" id="tiposDeProdutos">
+        <input type="hidden" name="tiposDeProdutos" value="" id="numeroProdutos">
         <ul class="list-group" id="listaProdutos">
 
         </ul>
     </div>
 
-    <button type="submit" class="btn btn-primary">Salvar</button>
+    <button type="submit" class="btn btn-primary" style="margin-bottom:8%">Salvar</button>
 </form>
 
 <script type="text/javascript">
