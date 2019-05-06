@@ -7,30 +7,87 @@
     </div>
     <div id="destino">
         <div class="form-row" id="origem">
+            <?php if(isset($dados['comprados'][0])){
+                    $j = 0;
+                    while(isset($dados['comprados'][$j])){ ?>
             <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome do Produto</label>
                 <select class="custom-select" name="produto_0" id="nomeProduto">
                     <option selected>Selecionar</option>
-                    <?php if(isset($produto)){
-                        $i = 0;
-                        while(isset($produto[$i])){ ?>
-                        <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
-                        <?php  
-                            $i++;
-                        }
-                    } ?>
+                    <?php 
+                                    if(isset($produto)){
+                                        $i = 0;
+                                        while(isset($produto[$i])){ 
+                                ?>
+                    <option <?php if($produto[$i]['id'] == $dados['comprados'][$j]['produtoID']){echo 'selected';} ?>
+                        value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome']; ?></option>
+                    <?php  
+                                        $i++;
+                                        }
+                                    }    
+                                ?>
                 </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="quantidade">Quantidade</label>
-                <input type="number" class="form-control" id="quantidade" name="qtd_0" autocomplete="off">
+                <?php 
+                    $i = 0;
+                    while(isset($produto[$i])){
+                        if($produto[$i]['id'] == $dados['comprados'][$j]['produtoID']){
+                ?>
+                <input type="number" class="form-control" id="quantidade"
+                    value="<?= $dados['comprados'][$j]['quantidade']; ?>" name="qtd_0" autocomplete="off" />
+                <?php
+                        }
+                        $i++;
+                    }
+                ?>
             </div>
-            <div class="form-group">
-            <label for=""></label>
-                <button type="button" id="btnAdicionar" class="btn btn-primary form-control" onclick="adicionarCampo()">Adicionar Produto</button>
-            </div>
+            <?php if(!isset($dados['comprados'][$j+1])){ ?>
+                <div class="form-group">
+                    <label for=""></label>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
+                        onclick="adicionarCampo()">Adicionar Produto</button>
+                </div>
+            <?php } ?>
+    <?php
+        $j++;
+    }
+    ?> 
         </div>
     </div>
+    <?php
+}else{ ?>
+    <div class="form-group col-md-6">
+        <label for="nomeProduto">Nome do Produto</label>
+        <select class="custom-select" name="produto_0" id="nomeProduto">
+            <option selected>Selecionar</option>
+            <?php 
+                if(isset($produto)){
+                    $i = 0;
+                    while(isset($produto[$i])){ ?>
+                <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
+                <?php  
+                        $i++;
+                    }
+                } 
+            ?>
+        </select>
+    </div>
+    <div class="form-group col-md-2">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" class="form-control" id="quantidade" name="qtd_0" autocomplete="off">
+    </div>
+    <div class="form-group">
+        <label for=""></label>
+        <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
+            onclick="adicionarCampo()">Adicionar Produto</button>
+    </div>
+    </div>
+    </div>
+
+    <?php } ?>
+
 
     <div class="container">
         <input type="hidden" name="tiposDeProdutos" value="" id="tiposDeProdutos">
@@ -43,76 +100,76 @@
 </form>
 
 <script type="text/javascript">
-    var produtos, elementos = [];
-    var numeroElementos = document.querySelector('#tiposDeProdutos');
-    var listaProdutos = document.querySelector('#listaProdutos');
-    var nomeProduto = document.querySelector('#nomeProduto');
-    var quantidadeProduto = document.querySelector('#quantidade');
+var produtos, elementos = [];
+var numeroElementos = document.querySelector('#tiposDeProdutos');
+var listaProdutos = document.querySelector('#listaProdutos');
+var nomeProduto = document.querySelector('#nomeProduto');
+var quantidadeProduto = document.querySelector('#quantidade');
 
-    function carregarProdutos(){
-        var req = new XMLHttpRequest();
-        req.onreadystatechange = function(){
-            if(req.readyState == 4 && req.status == 200){
-                produtos = JSON.parse(req.responseText);
-            }
+function carregarProdutos() {
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {
+            produtos = JSON.parse(req.responseText);
         }
-        req.open("GET", "<?= base_url('ajax'); ?>", true);
-        req.send();
     }
+    req.open("GET", "<?= base_url('ajax'); ?>", true);
+    req.send();
+}
 
-    function adicionarProduto(){
-        if(numeroElementos.value == 0){
-            let liTag = document.createElement('li');
-            liTag.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center');
-
-            listaProdutos.appendChild(liTag);
-
-            let titulo = document.createElement('p');
-            titulo.textContent = "Nome do Produto";
-            liTag.appendChild(titulo);
-
-            titulo = document.createElement('p');
-            titulo.textContent = "Quantidade";
-            liTag.appendChild(titulo);
-        }
-
+function adicionarProduto() {
+    if (numeroElementos.value == 0) {
         let liTag = document.createElement('li');
         liTag.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center');
 
-        let selectProduto = document.createElement('select');
-        selectProduto.setAttribute('class', 'custom-select');
-        selectProduto.setAttribute('name', 'nome' + numeroElementos.value);
-
-        let option;
-        for(let i = 0; i < produtos.length; i++){
-            option = document.createElement('option');
-            option.setAttribute('value', produtos[i].id);
-            option.textContent = produtos[i].nome;
-
-            selectProduto.appendChild(option);
-
-            if(nomeProduto[nomeProduto.selectedIndex].text == produtos[i].nome){
-                selectProduto.selectedIndex = i;
-            }
-        }
-
-        let quantidade = document.createElement('input');
-        quantidade.setAttribute('type', 'number');
-        quantidade.setAttribute('name', 'quantidade' + numeroElementos.value);
-        quantidade.setAttribute('autocomplete', 'off');
-        quantidade.setAttribute('class', 'form-control');
-        quantidade.setAttribute('value', quantidadeProduto.value);
-
-        elementos.push(liTag);
-        numeroElementos.value++;
-
         listaProdutos.appendChild(liTag);
-        liTag.appendChild(selectProduto);
-        liTag.appendChild(quantidade);
 
-        nomeProduto.selectedIndex = 0;
-        quantidadeProduto.value = 0;
+        let titulo = document.createElement('p');
+        titulo.textContent = "Nome do Produto";
+        liTag.appendChild(titulo);
+
+        titulo = document.createElement('p');
+        titulo.textContent = "Quantidade";
+        liTag.appendChild(titulo);
     }
 
-    carregarProdutos();
+    let liTag = document.createElement('li');
+    liTag.setAttribute('class', 'list-group-item d-flex justify-content-between align-items-center');
+
+    let selectProduto = document.createElement('select');
+    selectProduto.setAttribute('class', 'custom-select');
+    selectProduto.setAttribute('name', 'nome' + numeroElementos.value);
+
+    let option;
+    for (let i = 0; i < produtos.length; i++) {
+        option = document.createElement('option');
+        option.setAttribute('value', produtos[i].id);
+        option.textContent = produtos[i].nome;
+
+        selectProduto.appendChild(option);
+
+        if (nomeProduto[nomeProduto.selectedIndex].text == produtos[i].nome) {
+            selectProduto.selectedIndex = i;
+        }
+    }
+
+    let quantidade = document.createElement('input');
+    quantidade.setAttribute('type', 'number');
+    quantidade.setAttribute('name', 'quantidade' + numeroElementos.value);
+    quantidade.setAttribute('autocomplete', 'off');
+    quantidade.setAttribute('class', 'form-control');
+    quantidade.setAttribute('value', quantidadeProduto.value);
+
+    elementos.push(liTag);
+    numeroElementos.value++;
+
+    listaProdutos.appendChild(liTag);
+    liTag.appendChild(selectProduto);
+    liTag.appendChild(quantidade);
+
+    nomeProduto.selectedIndex = 0;
+    quantidadeProduto.value = 0;
+}
+
+carregarProdutos();
 </script>

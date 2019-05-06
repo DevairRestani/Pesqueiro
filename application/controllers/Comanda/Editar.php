@@ -15,6 +15,7 @@ class Editar extends CI_Controller{
         $this->load->model('Comanda/BuscaCompras');
         $dados['dados']['comprados'] = $this->BuscaCompras->buscar($dados['dados']['id']);
 
+        // print_r($dados); die;
         
         $this->load->view('comum/navbar');
         $this->load->view('comanda/adicionar', $dados);
