@@ -28,7 +28,7 @@
                     <th scope="row"><?php echo $i+1; ?></th>
                     <td><?php echo $dados[$i]['nome']; ?></td>
                     <td><?php echo $dados[$i]['horaabertura']; ?></td>
-                    <td> <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-pencil-alt"
+                    <td> <a href="<?= base_url("comanda/editar/".$dados[$i]['id']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
                         <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-info-circle"
                                 title="Info"></span></a>

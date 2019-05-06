@@ -7,6 +7,7 @@ $route['estoque'] = 'Estoque/Detalhes';
 $route['produto/adicionar'] = 'Estoque/Criar';
 $route['produto/salvar'] = 'Estoque/Criar/Salvar';
 $route['comanda/criar'] = 'Comanda/Criar';
+$route['comanda/editar/:num'] = 'Comanda/Editar';
 $route['comanda/salvar'] = 'Comanda/Criar/Salvar';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
