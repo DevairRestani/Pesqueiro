@@ -10,7 +10,8 @@ function adicionarCampo(){
     nameqtd.value = 'qtd_' + j;
     nameproduto.value = 'produto_' + j;
 
-    
+    let numeroElementos = document.querySelector('#numeroProdutos');
+    numeroElementos.setAttribute('value',j);
 
     var remove = destino.children;
     clone = remove[remove.length-1].cloneNode(true);
@@ -32,4 +33,7 @@ function adicionarCampo(){
         j++;
     }
     
+    
+
+
 }

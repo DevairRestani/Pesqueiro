@@ -14,7 +14,7 @@
                     <?php if(isset($produto)){
                         $i = 0;
                         while(isset($produto[$i])){ ?>
-                        <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
+                        <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
                         <?php  
                             $i++;
                         }
@@ -33,7 +33,7 @@
     </div>
 
     <div class="container">
-        <input type="hidden" name="tiposDeProdutos" value="" id="tiposDeProdutos">
+        <input type="hidden" name="tiposDeProdutos" value="" id="numeroProdutos">
         <ul class="list-group" id="listaProdutos">
 
         </ul>
