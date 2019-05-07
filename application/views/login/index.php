@@ -34,18 +34,19 @@
             <label for="User">Usuário</label>
             <input type="text" name="usuario" class="form-control" id="User" aria-describedby="userHelp"
                 placeholder="Usuário">
-            <small id="userHelp" class="form-text text-muted">Nunca compartilhe com <b>ninguém.</b></small>
+            
         </div>
         <div class="form-group">
             <label for="Senha">Senha</label>
             <input type="password" name="senha" class="form-control" id="Senha" placeholder="Senha">
+            <small id="userHelp" class="form-text text-muted">Nunca compartilhe com <b>ninguém.</b></small>
         </div>
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="Manter">
             <label class="form-check-label" for="Manter">Manter-me logado</label>
         </div>
         <button type="submit" class="btn btn-primary">Entrar</button>
-        <a href="<?= base_url('home'); ?>">entrar</a>
+        
     </form>
 </body>
 
