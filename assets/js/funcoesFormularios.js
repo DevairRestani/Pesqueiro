@@ -19,9 +19,7 @@ function adicionarCampo(){
 
     c++;
 
-    destino.appendChild(clone);
-
-    
+    destino.appendChild(clone); 
 
     var camposClonados = clone.getElementsByTagName('input');
     var select = clone.getElementsByTagName("select");

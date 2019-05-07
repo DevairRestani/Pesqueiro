@@ -62,7 +62,7 @@
                 if(isset($produto)){
                     $i = 0;
                     while(isset($produto[$i])){ ?>
-                <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
+                <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
                 <?php  
                         $i++;
                     }

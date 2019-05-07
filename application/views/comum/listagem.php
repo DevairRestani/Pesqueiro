@@ -30,7 +30,7 @@
                     <td><?php echo $dados[$i]['horaabertura']; ?></td>
                     <td> <a href="<?= base_url("comanda/editar/".$dados[$i]['id']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
-                        <a href="<?php echo $dados[$i]['id']; ?>"><span class="fas fa-info-circle"
+                        <a href=" <?php echo $dados[$i]['id']; ?>"><span class="fas fa-times-circle"
                                 title="Info"></span></a>
                     </td>
                 </tr>
@@ -49,7 +49,7 @@
                     <td>
                         <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
-                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-info-circle"
+                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-times-circle"
                                 title="Info"></span></a>
                     </td>
                 </tr>
