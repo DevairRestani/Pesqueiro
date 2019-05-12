@@ -10,6 +10,7 @@
 </head>
 
 <style>
+
 .aligCenter {
     width: 50%;
     transform: translate(-50%, -50%);
@@ -20,6 +21,7 @@
     resize: both;
     overflow: auto;
 }
+
 </style>
 
 <body>
