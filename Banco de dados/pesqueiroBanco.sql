@@ -114,4 +114,4 @@ INSERT INTO `produtos` (`id`, `nome`, `valor`) VALUES
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 
 INSERT INTO administrador(email, login, senha) VALUES('admin@admin.com', 'admin@admin.com', SHA1('123456'));
-INSERT INTO administrador(email, login, senha) VALUES('caio@caio.com', 'logincaio', SHA1('senhacaio'));
+INSERT INTO administrador(email, login, senha) VALUES('caio@caio.com', 'logincaio', SHA1('senhacaio'));pesqueiro

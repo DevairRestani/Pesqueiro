@@ -2,7 +2,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="nome">Nome do Proprietário da Comanda</label>
-            <input type="text" name="NomeProprietario" id="nome" class="form-control">
+            <input type="text" required="required" name="NomeProprietario" id="nome" class="form-control">
         </div>
     </div>
     <div id="destino">
@@ -13,12 +13,12 @@
             <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome do Produto</label>
                 <select class="custom-select" name="produto_0" id="nomeProduto">
-                    <option selected>Selecionar</option>
+                    <option selected value="">Selecionar</option>
                     <?php if(isset($produto)){
                         $i = 0;
                         while(isset($produto[$i])){ ?>
-                        <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
-                        <?php  
+                    <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
+                    <?php  
                             $i++;
                         }
                     } ?>
@@ -40,16 +40,16 @@
                 ?>
             </div>
             <?php if(!isset($dados['comprados'][$j+1])){ ?>
-                <div class="form-group">
-                    <label for=""></label>
-                    <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
-                        onclick="adicionarCampo()">Adicionar Produto</button>
-                </div>
+            <div class="form-group">
+                <label for=""></label>
+                <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
+                    onclick="adicionarCampo()">Adicionar Produto</button>
+            </div>
             <?php } ?>
-    <?php
+            <?php
         $j++;
     }
-    ?> 
+    ?>
         </div>
     </div>
     <?php
@@ -57,13 +57,13 @@
     <div class="form-group col-md-6">
         <label for="nomeProduto">Nome do Produto</label>
         <select class="custom-select" name="produto_0" id="nomeProduto">
-            <option selected>Selecionar</option>
+            <option selected value="" selected>Selecionar</option>
             <?php 
                 if(isset($produto)){
                     $i = 0;
                     while(isset($produto[$i])){ ?>
-                <option value="<?php echo $produto[$i]['id']?>"><?php echo $produto[$i]['nome'] ?></option>
-                <?php  
+            <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
+            <?php  
                         $i++;
                     }
                 } 
