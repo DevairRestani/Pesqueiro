@@ -19,6 +19,9 @@ function adicionarCampo(){
 
     c++;
 
+    clone.childNodes[1].getElementsByTagName('select')[0].setAttribute('required', 'required');
+    clone.childNodes[3].getElementsByTagName('input')[0].setAttribute('required', 'required');
+
     destino.appendChild(clone); 
 
     var camposClonados = clone.getElementsByTagName('input');

@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label for="valor">Valor</label>
-        <input type="number" name="valor" class="form-control" id="valor" placeholder="EX: 2,30" autocomplete="off">
+        <input type="double" name="valor" class="form-control" id="valor" placeholder="EX: 2,30" autocomplete="off">
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>
