@@ -1,7 +1,12 @@
 <?php 
     $i = 0;
-    while(isset($dados['faltaEstoque'][$i])){
-        echo($dados['faltaEstoque']['nome']);
+    while(isset($faltaEstoque[$i])){
+    ?>
+    <div class="alert alert-danger" role="alert">
+        Erro ao adicionar <?php echo($faltaEstoque[$i]['nome']); ?>: Não há estoque o suficiente para essa requisição
+    </div>
+    <?php
+        $i++;
     }
 ?>
 
