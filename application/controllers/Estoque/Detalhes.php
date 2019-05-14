@@ -12,8 +12,8 @@ class Detalhes extends CI_Controller{
         $this->load->model('Produto/Produtos');
         $dados['produto'] = $this->Produtos->listar();
 
-        $this->load->view('comum/navBar');
-        $this->load->view('comum/listagem', $dados);
+        $this->load->view('comum/navBar', $dados);
+        $this->load->view('comum/listagem');
         $this->load->view('comum/footer');
     }
 }

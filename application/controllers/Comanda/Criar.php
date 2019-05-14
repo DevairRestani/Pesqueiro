@@ -59,8 +59,8 @@ class Criar extends CI_Controller{
             $dados['faltaEstoque'] = $this->Produtos->buscarProdutosPor($erros);
         }
 
-        $this->load->view('comum/navbar');
-        $this->load->view('comanda/adicionar', $dados);
+        $this->load->view('comum/navbar', $dados);
+        $this->load->view('comanda/adicionar');
         $this->load->view('comum/footer');
     }
 }
