@@ -1,3 +1,10 @@
+<?php 
+    $i = 0;
+    while(isset($dados['faltaEstoque'][$i])){
+        echo($dados['faltaEstoque']['nome']);
+    }
+?>
+
 <form method="post" action="<?= base_url('comanda/salvar'); ?>">
     <div class="form-row">
         <div class="form-group col-md-6">

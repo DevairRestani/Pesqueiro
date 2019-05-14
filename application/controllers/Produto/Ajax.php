@@ -9,6 +9,6 @@ class Ajax extends CI_Controller{
     public function receberObjetos(){
         $this->load->model('Produto/Produtos');
         
-        return json_encode($this->Produtos->listar());
+        echo json_encode($this->Produtos->listar());
     }
 }

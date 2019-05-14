@@ -15,6 +15,6 @@ class Editar extends CI_Model{
         $this->db->where('quantidade >=', $produto['quantidade']);
         $this->db->update('estoque');
 
-        return $this->db->update_id();
+        return $this->db->affected_rows() > 0;
     }
 }

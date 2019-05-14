@@ -9,7 +9,6 @@ class Criar extends CI_Controller{
     public function index(){
         $this->load->model('Produto/Produtos');
         $dados['produto'] = $this->Produtos->listar();
-        // print_r($dados); die;
 
         $this->load->view('comum/navbar');
         $this->load->view('comanda/adicionar', $dados);
@@ -24,14 +23,14 @@ class Criar extends CI_Controller{
         $comanda['estado'] = 1;
 
         $this->load->model('Comanda/CriarComanda');
-        $idComanda = $this->CriarComanda->salvarComanda($comanda);
         $compra['comandaID'] = $this->CriarComanda->salvarComanda($comanda);
 
-        //$numeroElementos = intval($this->input->post('tiposDeProdutos'));
+        $this->load->model('Produto/Produtos');
+        $listaProdutos = $this->Produtos->listar();
         
 
         $i = 0;
-
+        $j = 0;
         if($this->input->post('produto_'.$i) != null){
             while($this->input->post('produto_'.$i) !== null){
 
@@ -45,16 +44,20 @@ class Criar extends CI_Controller{
                     $compra['quantidade'] = $produto['quantidade'];
                     $this->Adicionar->adicionarCompra($compra);
                 }else{
-                    echo("Deu ruim");
+                    $erros[$j] = $produto['produtoID'];
+                    $j++;
                 }
 
                 $i++;
             }
         }
 
-        $this->load->model('Produto/Produtos');
-        $dados['produto'] = $this->Produtos->listar();
-        // print_r($dados); die;
+        $dados['produto'] = $listaProdutos;
+
+        if(isset($erros)){
+            $this->load->model('Produto/Produtos');
+            $dados['faltaEstoque'] = $this->Produtos->buscarProdutosPor($erros);
+        }
 
         $this->load->view('comum/navbar', $dados);
         $this->load->view('comanda/adicionar');
