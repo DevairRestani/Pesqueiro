@@ -11,6 +11,7 @@ $route['estoque/excluir/:num'] = 'Estoque/excluir';
 $route['produto/salvar'] = 'Estoque/Criar/Salvar';
 $route['comanda/criar'] = 'Comanda/Criar';
 $route['comanda/editar/:num'] = 'Comanda/Editar';
+$route['comanda/alterar/:num'] = 'Comanda/Alterar';
 $route['comanda/salvar'] = 'Comanda/Criar/Salvar';
 $route['comanda/excluir/:num'] = 'Comanda/Excluir';
 $route['404_override'] = '';

@@ -39,4 +39,5 @@ class Editar extends CI_Controller{
         $this->load->view('comum/listagem');
         $this->load->view('comum/footer');
     }
+
 }

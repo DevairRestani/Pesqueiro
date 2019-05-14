@@ -29,9 +29,14 @@ class Criar extends CI_Controller{
         $this->load->model('Comanda/CriarComanda');
         $compra['comandaID'] = $this->CriarComanda->salvarComanda($comanda);
 
+<<<<<<< HEAD
         //$this->load->model('Produto/Produtos');
         //$listaProdutos = $this->Produtos->listar();
         
+=======
+        $this->load->model('Produto/Produtos');
+        $listaProdutos = $this->Produtos->listar();
+>>>>>>> 06e9b134895e1c5b0f199aef48a58e30dc072266
 
         $i = 0;
         $j = 0;
