@@ -2,7 +2,9 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="nome">Nome do Proprietário da Comanda</label>
-            <input type="text" required="required" name="NomeProprietario" id="nome" class="form-control">
+            <input type="text" required="required"
+                value="<?php if(isset($dados)){echo $dados['comprados'][0]['nome']; } ?>" name="NomeProprietario"
+                id="nome" class="form-control">
         </div>
     </div>
     <div id="destino">
@@ -12,48 +14,38 @@
                     while(isset($dados['comprados'][$j])){ ?>
             <div class="form-group col-md-6">
                 <label for="nomeProduto">Nome do Produto</label>
-                <select class="custom-select" name="produto_0" id="nomeProduto">
+                <select class="custom-select" name="produto_<?= $j ?>" id="nomeProduto">
                     <option selected value="">Selecionar</option>
                     <?php if(isset($produto)){
-                        $i = 0;
-                        while(isset($produto[$i])){ ?>
-                    <option value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
+                                    $i = 0;
+                                    while(isset($produto[$i])){ ?>
+                    <option <?php if($produto[$i]['id'] == $dados['comprados'][$j]['produtoID']){echo 'selected';} ?> value="<?php echo $produto[$i]['produtoID']?>"><?php echo $produto[$i]['nome'] ?></option>
                     <?php  
-                            $i++;
-                        }
-                    } ?>
+                                        $i++;
+                                    }
+                                } ?>
                 </select>
             </div>
             <div class="form-group col-md-2">
                 <label for="quantidade">Quantidade</label>
-                <?php 
-                    $i = 0;
-                    while(isset($produto[$i])){
-                        if($produto[$i]['id'] == $dados['comprados'][$j]['produtoID']){
-                ?>
-                <input type="number" class="form-control" id="quantidade"
+                <input type="number" class="form-control" id="qtd_<?= $j ?>"
                     value="<?= $dados['comprados'][$j]['quantidade']; ?>" name="qtd_0" autocomplete="off" />
-                <?php
-                        }
-                        $i++;
-                    }
-                ?>
             </div>
             <?php if(!isset($dados['comprados'][$j+1])){ ?>
-            <div class="form-group">
-                <label for=""></label>
-                <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
-                    onclick="adicionarCampo()">Adicionar Produto</button>
-            </div>
+                <div class="form-group">
+                    <label for=""></label>
+                    <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
+                        onclick="adicionarCampo()">Adicionar Produto</button>
+                </div>
             <?php } ?>
             <?php
-        $j++;
-    }
-    ?>
+                    $j++;
+                }
+            ?>
         </div>
     </div>
     <?php
-}else{ ?>
+        }else{ ?>
     <div class="form-group col-md-6">
         <label for="nomeProduto">Nome do Produto</label>
         <select class="custom-select" name="produto_0" id="nomeProduto">
@@ -78,8 +70,6 @@
         <label for=""></label>
         <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
             onclick="adicionarCampo()">Adicionar Produto</button>
-    </div>
-    </div>
     </div>
 
     <?php } ?>

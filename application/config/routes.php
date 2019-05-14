@@ -4,6 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Defalt';
 $route['home'] = 'Inicio/Home';
 $route['estoque'] = 'Estoque/Detalhes';
+$route['estoque/editar/:num'] = 'Estoque/Editar';
+$route['produto/alterar'] = 'Estoque/Editar/alterar';
 $route['produto/adicionar'] = 'Estoque/Criar';
 $route['produto/salvar'] = 'Estoque/Criar/Salvar';
 $route['comanda/criar'] = 'Comanda/Criar';

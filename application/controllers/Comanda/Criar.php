@@ -56,8 +56,8 @@ class Criar extends CI_Controller{
         $dados['produto'] = $this->Produtos->listar();
         // print_r($dados); die;
 
-        $this->load->view('comum/navbar');
-        $this->load->view('comanda/adicionar', $dados);
+        $this->load->view('comum/navbar', $dados);
+        $this->load->view('comanda/adicionar');
         $this->load->view('comum/footer');
     }
 }

@@ -47,7 +47,7 @@
                     <td><span><b>R$ </b></span><?= $produto[$i]['valor'] ?></td>
                     <td><?= $produto[$i]['quantidade'] ?></td>
                     <td>
-                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-pencil-alt"
+                        <a href="<?php echo base_url("estoque/editar/".$produto[$i]['id']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
                         <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-times-circle"
                                 title="Excluir"></span></a>
