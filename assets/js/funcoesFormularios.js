@@ -15,10 +15,9 @@ function adicionarCampo(){
     numeroElementos.setAttribute('value',j);
 
     var remover = destino.children;
-    clone = remover[c].cloneNode(true);
-    console.log(remover);
+    clone = remover[remover.length-1].cloneNode(true);
     remover[c].removeChild(remover[c].children[2]);
-    remover[c].removeChild(remover[c].children[3]);
+   
 
     c++;
 
@@ -36,7 +35,7 @@ function adicionarCampo(){
 
     for (i = 0; i < camposClonados.length; i++) {
         camposClonados[i].value = '';
-        camposClonados[i].setAttributeNode(nameqtd.cloneNode(true));
+        camposClonados[i].setAttributeNode(nameqtd);
         select[i].setAttributeNode(nameproduto);
         
         j++;
