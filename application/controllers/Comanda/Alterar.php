@@ -23,7 +23,7 @@ class BuscaCompras extends CI_Model{
                 
 
                 if($this->Editar->baixaEstoque($produto) == true){
-                    $this->editarComanda->AlterarComanda($idComanda, $produto['produtoID'], $comanda, );
+                    $this->editarComanda->AlterarComanda($idComanda, $produto['produtoID'], $comanda);
                     
 
                 }else{
