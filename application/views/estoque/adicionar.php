@@ -2,7 +2,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="nome">Nome do Produto</label>
-            <input type="text" name="NomeProduto" id="nome" class="form-control" placeholder="Exemplo: Coca-cola">
+            <input type="text" name="NomeProduto" id="nome" class="form-control" placeholder="Exemplo: Coca-cola 2L">
         </div>
         <div class="form-group col-md-4">
             <label for="unidade">Selecione a Unidade</label>
@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <label for="valor">Valor</label>
-        <input type="text" name="valor" class="form-control" id="valor" placeholder="EX: 2,30" autocomplete="off">
+        <input type="double" name="valor" class="form-control" id="valor" placeholder="EX: 2,30" autocomplete="off">
     </div>
     <button type="submit" class="btn btn-primary">Salvar</button>
 </form>

@@ -14,7 +14,6 @@ class BuscaCompras extends CI_Model{
 
         $querry = $this->db->get();
         
-
         return $querry->result_array();
     }
 

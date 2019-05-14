@@ -25,18 +25,42 @@ class Criar extends CI_Controller{
         $this->load->model('Comanda/CriarComanda');
         $compra['comandaID'] = $this->CriarComanda->salvarComanda($comanda);
 
-        $numeroElementos = intval($this->input->post('tiposDeProdutos'));
-        $this->load->model('Compra/Adicionar');
+        $this->load->model('Produto/Produtos');
+        $listaProdutos = $this->Produtos->listar();
+        
 
-        for($i = 0; $i < $numeroElementos; $i += 1){
-            $compra['produtoID'] = intval($this->input->post('nome'.$i));
-            $compra['quantidade'] = intval($this->input->post('quantidade'.$i));
+        $i = 0;
+        $j = 0;
+        if($this->input->post('produto_'.$i) != null){
+            while($this->input->post('produto_'.$i) !== null){
 
-            $this->Adicionar->adicionarCompra($compra);
+                $produto['produtoID'] = intval($this->input->post('produto_'.$i));
+                $produto['quantidade'] = intval($this->input->post('qtd_'.$i));
+
+                $this->load->model('Estoque/Editar');
+                if($this->Editar->baixaEstoque($produto) == true){
+                    $this->load->model('Compra/Adicionar');
+                    $compra['produtoID'] = $produto['produtoID'];
+                    $compra['quantidade'] = $produto['quantidade'];
+                    $this->Adicionar->adicionarCompra($compra);
+                }else{
+                    $erros[$j] = $produto['produtoID'];
+                    $j++;
+                }
+
+                $i++;
+            }
+        }
+
+        $dados['produto'] = $listaProdutos;
+
+        if(isset($erros)){
+            $this->load->model('Produto/Produtos');
+            $dados['faltaEstoque'] = $this->Produtos->buscarProdutosPor($erros);
         }
 
         $this->load->view('comum/navbar');
-        $this->load->view('comanda/adicionar');
+        $this->load->view('comanda/adicionar', $dados);
         $this->load->view('comum/footer');
     }
 }

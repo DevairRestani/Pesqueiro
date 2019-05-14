@@ -10,7 +10,8 @@ function adicionarCampo(){
     nameqtd.value = 'qtd_' + j;
     nameproduto.value = 'produto_' + j;
 
-    
+    let numeroElementos = document.querySelector('#numeroProdutos');
+    numeroElementos.setAttribute('value',j);
 
     var remove = destino.children;
     clone = remove[remove.length-1].cloneNode(true);
@@ -18,9 +19,10 @@ function adicionarCampo(){
 
     c++;
 
-    destino.appendChild(clone);
+    clone.childNodes[1].getElementsByTagName('select')[0].setAttribute('required', 'required');
+    clone.childNodes[3].getElementsByTagName('input')[0].setAttribute('required', 'required');
 
-    
+    destino.appendChild(clone); 
 
     var camposClonados = clone.getElementsByTagName('input');
     var select = clone.getElementsByTagName("select");
@@ -32,4 +34,7 @@ function adicionarCampo(){
         j++;
     }
     
+    
+
+
 }

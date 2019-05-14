@@ -19,6 +19,22 @@ class Produtos extends CI_Model{
         return $query->result_array();
     }
 
+    public function buscarProdutosPor($id){
+        $this->db->select("nome");
+        $this->db->from("produtos");
+        $this->db->where("id", $id[0]);
+
+        $j = 1;
+        while(isset($id[$j])){
+            $this->db->or_where("id", $id[$j]);
+            $j++;
+        }
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+    }
+
     public function inserir($dados){
         $this->db->insert('produtos', $dados);
 
