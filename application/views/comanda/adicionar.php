@@ -15,7 +15,7 @@
         <div class="form-group col-md-6">
             <label for="nome">Nome do Proprietário da Comanda</label>
             <input type="text" required="required"
-                value="<?php if(isset($dados)){echo $dados['comprados'][0]['nome']; } ?>" name="NomeProprietario"
+                value="<?php if(isset($dados['comanda'])){echo $dados['comanda']['nome']; } ?>" name="NomeProprietario"
                 id="nome" class="form-control">
         </div>
     </div>
@@ -88,7 +88,7 @@
 
 
     <div class="container">
-        <input type="hidden" name="tiposDeProdutos" value="" id="numeroProdutos">
+        <input type="hidden" name="tipoDeAlteracao" value="<?php if(isset($dados['comanda'])) echo(intval($this->uri->segment(3))); else echo(0);?>" id="numeroProdutos">
         <ul class="list-group" id="listaProdutos">
 
         </ul>

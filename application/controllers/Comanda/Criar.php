@@ -18,6 +18,8 @@ class Criar extends CI_Controller{
     public function Salvar(){
         session_start();
 
+        $alteracao = $this->input->post('tipoDeAlteracao');
+
         $comanda['nome'] = $this->input->post('NomeProprietario');
         $comanda['administradorID'] = $_SESSION['id'];
         $comanda['estado'] = 1;
@@ -27,7 +29,6 @@ class Criar extends CI_Controller{
 
         $this->load->model('Produto/Produtos');
         $listaProdutos = $this->Produtos->listar();
-        
 
         $i = 0;
         $j = 0;

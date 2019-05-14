@@ -7,13 +7,15 @@ class Editar extends CI_Controller{
 
     public function index(){
         
-        $dados['dados']['id'] = $this->uri->segment(3);
+        $id = intval($this->uri->segment(3));
         
         $this->load->model('Produto/Produtos');
         $dados['produto'] = $this->Produtos->listar();
 
         $this->load->model('Comanda/BuscaCompras');
-        $dados['dados']['comprados'] = $this->BuscaCompras->buscar($dados['dados']['id']);
+        $dados['dados']['comanda'] = $this->BuscaCompras->search($id);
+        $dados['dados']['comprados'] = $this->BuscaCompras->search2($id);
+
         //$compras = $this->BuscaCompras->buscar($dados['dados']['id']);
         
         $this->load->view('comum/navbar', $dados);
