@@ -30,7 +30,7 @@
                     <td><?php echo $dados[$i]['horaabertura']; ?></td>
                     <td> <a href="<?= base_url("comanda/editar/".$dados[$i]['id']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
-                        <a href=" <?php base_url("comanda/excluir/".$dados[$i]['id']); ?>"><span class="fas fa-times-circle"
+                        <a href=" <?= base_url("comanda/excluir/".$dados[$i]['id']); ?>" onkeydonw="confirmacaoExcluir(this)"><span class="fas fa-times-circle"
                                 title="Excluir"></span></a>
                     </td>
                 </tr>
@@ -47,9 +47,9 @@
                     <td><span><b>R$ </b></span><?= $produto[$i]['valor'] ?></td>
                     <td><?= $produto[$i]['quantidade'] ?></td>
                     <td>
-                        <a href="<?php echo base_url("estoque/editar/".$produto[$i]['id']); ?>"><span class="fas fa-pencil-alt"
+                        <a href="<?= base_url("estoque/editar/".$produto[$i]['id']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
-                        <a href="<?php echo $produto[$i]['id']; ?>"><span class="fas fa-times-circle"
+                        <a href="<?= base_url('estoque/excluir/'.$produto[$i]['id']); ?>" onkeydonw="confirmacaoExcluir(this)"><span class="fas fa-times-circle"
                                 title="Excluir"></span></a>
                     </td>
                 </tr>

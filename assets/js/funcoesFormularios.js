@@ -33,8 +33,11 @@ function adicionarCampo(){
         select[i].setAttributeNode(nameproduto);
         j++;
     }
-    
-    
 
+}
 
+function confirmacaoExcluir(e){
+    if(window.confirm('Deseja continuar a excluir?')){
+        window.location.replace(e.href);
+    }
 }
