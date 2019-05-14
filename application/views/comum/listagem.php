@@ -6,7 +6,6 @@
 </div>
 <div class="row principal">
     <div class="container">
-
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -47,9 +46,9 @@
                     <td><span><b>R$ </b></span><?= $produto[$i]['valor'] ?></td>
                     <td><?= $produto[$i]['quantidade'] ?></td>
                     <td>
-                        <a href="<?= base_url("estoque/editar/".$produto[$i]['id']); ?>"><span class="fas fa-pencil-alt"
+                        <a href="<?= base_url("estoque/editar/".$produto[$i]['produtoID']); ?>"><span class="fas fa-pencil-alt"
                                 title="Editar"></span></a>
-                        <a href="<?= base_url('estoque/excluir/'.$produto[$i]['id']); ?>" onkeydonw="confirmacaoExcluir(this)"><span class="fas fa-times-circle"
+                        <a href="<?= base_url('estoque/excluir/'.$produto[$i]['produtoID']); ?>" onkeydonw="confirmacaoExcluir(this)"><span class="fas fa-times-circle"
                                 title="Excluir"></span></a>
                     </td>
                 </tr>

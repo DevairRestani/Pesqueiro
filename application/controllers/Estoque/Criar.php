@@ -24,11 +24,17 @@ class Criar extends CI_Controller{
 
         $estoque['quantidade'] = intval($this->input->post('quantidade'));
         $estoque['produtoID'] = intval($id);
+
         $this->load->model('Estoque/CriarEstoque');
         $this->CriarEstoque->InserirEstoque($estoque);
 
-        $this->load->view('comum/navBar');
-        $this->load->view('estoque/adicionar');
+        $this->load->model('Produto/Produtos');
+        $dados['produto'] = $this->Produtos->listar();
+
+        $dados['linkAdicionar'] = 'produto/adicionar';
+
+        $this->load->view('comum/navbar', $dados);
+        $this->load->view('Comum/listagem');
         $this->load->view('comum/footer');
     }
 }

@@ -78,6 +78,8 @@
         <button type="button" id="btnAdicionar" class="btn btn-primary form-control"
             onclick="adicionarCampo()">Adicionar Produto</button>
     </div>
+    </div>
+    </div>
 
     <?php } ?>
 

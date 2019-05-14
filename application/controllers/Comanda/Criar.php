@@ -22,11 +22,13 @@ class Criar extends CI_Controller{
         $comanda['administradorID'] = $_SESSION['id'];
         $comanda['estado'] = 1;
 
+        //print_r($comanda); die;
+
         $this->load->model('Comanda/CriarComanda');
         $compra['comandaID'] = $this->CriarComanda->salvarComanda($comanda);
 
-        $this->load->model('Produto/Produtos');
-        $listaProdutos = $this->Produtos->listar();
+        //$this->load->model('Produto/Produtos');
+        //$listaProdutos = $this->Produtos->listar();
         
 
         $i = 0;
@@ -52,15 +54,19 @@ class Criar extends CI_Controller{
             }
         }
 
-        $dados['produto'] = $listaProdutos;
+        //$dados['produto'] = $listaProdutos;
 
         if(isset($erros)){
             $this->load->model('Produto/Produtos');
             $dados['faltaEstoque'] = $this->Produtos->buscarProdutosPor($erros);
         }
 
-        $this->load->view('comum/navbar', $dados);
-        $this->load->view('comanda/adicionar');
+        $this->load->model('listagem/Listar');
+        $dados['dados'] = $this->Listar->listarComandas();
+
+        $this->load->view('comum/navBar', $dados);
+        $this->load->view('comum/listagem');
         $this->load->view('comum/footer');
+
     }
 }

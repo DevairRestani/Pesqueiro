@@ -27,13 +27,7 @@ CREATE TABLE IF NOT EXISTS `administrador` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela pesqueiro.administrador: ~0 rows (aproximadamente)
-DELETE FROM `administrador`;
-/*!40000 ALTER TABLE `administrador` DISABLE KEYS */;
-INSERT INTO `administrador` (`id`, `email`, `login`, `senha`) VALUES
-	(1, 'teste@teste.com', 'testevaoldo', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220');
-/*!40000 ALTER TABLE `administrador` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela pesqueiro.comandasabertas
 DROP TABLE IF EXISTS `comandasabertas`;
 CREATE TABLE IF NOT EXISTS `comandasabertas` (
@@ -47,15 +41,7 @@ CREATE TABLE IF NOT EXISTS `comandasabertas` (
   CONSTRAINT `comandasabertas_ibfk_1` FOREIGN KEY (`administradorID`) REFERENCES `administrador` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela pesqueiro.comandasabertas: ~2 rows (aproximadamente)
-DELETE FROM `comandasabertas`;
-/*!40000 ALTER TABLE `comandasabertas` DISABLE KEYS */;
-INSERT INTO `comandasabertas` (`id`, `nome`, `administradorID`, `horaabertura`, `estado`) VALUES
-	(2, 'teste', 1, '2019-05-03 20:24:07', 1),
-	(3, 'teste 2', 1, '2019-05-03 20:24:45', 1),
-	(4, 'teste 3', 1, '2019-05-03 20:24:49', 1);
-/*!40000 ALTER TABLE `comandasabertas` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela pesqueiro.comprasabertas
 DROP TABLE IF EXISTS `comprasabertas`;
 CREATE TABLE IF NOT EXISTS `comprasabertas` (
@@ -70,11 +56,7 @@ CREATE TABLE IF NOT EXISTS `comprasabertas` (
   CONSTRAINT `comprasabertas_ibfk_2` FOREIGN KEY (`comandaID`) REFERENCES `comandasabertas` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela pesqueiro.comprasabertas: ~0 rows (aproximadamente)
-DELETE FROM `comprasabertas`;
-/*!40000 ALTER TABLE `comprasabertas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `comprasabertas` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela pesqueiro.estoque
 DROP TABLE IF EXISTS `estoque`;
 CREATE TABLE IF NOT EXISTS `estoque` (
@@ -87,11 +69,7 @@ CREATE TABLE IF NOT EXISTS `estoque` (
   CONSTRAINT `estoque_ibfk_1` FOREIGN KEY (`produtoID`) REFERENCES `produtos` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela pesqueiro.estoque: ~0 rows (aproximadamente)
-DELETE FROM `estoque`;
-/*!40000 ALTER TABLE `estoque` DISABLE KEYS */;
-/*!40000 ALTER TABLE `estoque` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 -- Copiando estrutura para tabela pesqueiro.produtos
 DROP TABLE IF EXISTS `produtos`;
 CREATE TABLE IF NOT EXISTS `produtos` (
@@ -101,17 +79,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- Copiando dados para a tabela pesqueiro.produtos: ~0 rows (aproximadamente)
-DELETE FROM `produtos`;
-/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-INSERT INTO `produtos` (`id`, `nome`, `valor`) VALUES
-	(1, 'coca', 12.1),
-	(2, 'jaca', 1231);
-/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
-
+-- Exportação de dados foi desmarcado.
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-
-INSERT INTO administrador(email, login, senha) VALUES('admin@admin.com', 'admin@admin.com', SHA1('123456'));
-INSERT INTO administrador(email, login, senha) VALUES('caio@caio.com', 'logincaio', SHA1('senhacaio'));pesqueiro

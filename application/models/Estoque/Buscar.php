@@ -12,10 +12,14 @@ class Buscar extends CI_Model{
     public function buscaProduto($id){
         $this->db->select('*');
         $this->db->from('estoque');
-        $this->db->join('produtos', 'produtos.id = estoque.produtoID');
+        $this->db->join('produtos', 'estoque.produtoID = produtos.id');
         $this->db->where('produtoID', $id);
 
+
+
         $dados = $this->db->get();
+
+
         return $dados->result_array();
     }
 

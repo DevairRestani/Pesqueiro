@@ -14,6 +14,7 @@ class Editar extends CI_Controller{
         $this->load->model('Estoque/Buscar');
         $dados['produto'] = $this->Buscar->buscaProduto($id);
 
+
         $this->load->view('comum/navBar', $dados);
         $this->load->view('estoque/adicionar');
         $this->load->view('comum/footer');
@@ -29,8 +30,13 @@ class Editar extends CI_Controller{
         $this->Buscar->alterarProduto($estoque, $id, 'estoque', 'produtoID');
         $this->Buscar->alterarProduto($produto, $id, 'produtos', 'id');
 
-        $this->load->view('comum/navBar');
-        $this->load->view('estoque/adicionar');
+        $dados['linkAdicionar'] = 'produto/adicionar';
+
+        $this->load->model('Produto/Produtos');
+        $dados['produto'] = $this->Produtos->listar();
+
+        $this->load->view('comum/navBar', $dados);
+        $this->load->view('comum/listagem');
         $this->load->view('comum/footer');
     }
 }

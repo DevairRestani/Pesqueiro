@@ -1,4 +1,5 @@
 <form method="post" action="<?php if(isset($produto)){ echo base_url('produto/alterar');}else{ echo base_url('produto/salvar');} ?>">
+
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="nome">Nome do Produto</label>
